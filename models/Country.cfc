@@ -26,5 +26,15 @@
 	<cfreturn q_AllCountries>
 </cffunction>
 
+<cffunction access="public" name="find" returntype="query" output="false">
+	<cfargument name="arg_Name" type="string">
+	<cfquery name="q_TargetCountry" datasource="DS_World_Test">
+		SELECT Code, x.Name, Continent, Region, SurfaceArea, IndepYear, x.Population, LifeExpectancy, GNP, GNPOld, LocalName, GovernmentForm, HeadOfState, y.Name as Capital, Code2
+		FROM Country as x, City as y
+		WHERE x.Name="#arg_Name#"
+		AND	x.Capital=y.ID		
+	</cfquery>
+	<cfreturn q_TargetCountry>
+</cffunction>
 
 </cfcomponent>
