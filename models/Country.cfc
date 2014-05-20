@@ -18,8 +18,9 @@
 
 <cffunction access="public" name="listAll" returntype="query">
 	<cfquery name="q_AllCountries" datasource="DS_World_Test">
-		SELECT *
-		FROM Country
+		SELECT Code, x.Name, Continent, Region, SurfaceArea, IndepYear, x.Population, LifeExpectancy, GNP, GNPOld, LocalName, GovernmentForm, HeadOfState, y.Name as Capital, Code2
+		FROM Country as x, City as y
+		WHERE x.Capital=y.ID
 	</cfquery>
 	<cfreturn q_AllCountries>
 </cffunction>

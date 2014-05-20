@@ -1,9 +1,9 @@
-<cfcomponent displayname="City" hint="Object Model for countries." output="false">
+<cfcomponent displayname="City" hint="Object Model for cities." output="false" entityName="City">
 
 <cfproperty name="ID" type="numeric">
-<cfproperty name="Name">
-<cfproperty name="CountryCode">
-<cfproperty name="District">
-<cfproperty name="Population">
+<cfproperty name="Name" type="string">
+<cfproperty name="CountryCode" type="string">
+<cfproperty name="District" type="string">
+<cfproperty name="Population" type="numeric"> 
 
 </cfcomponent>
